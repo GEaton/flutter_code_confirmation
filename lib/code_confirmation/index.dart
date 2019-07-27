@@ -14,16 +14,16 @@ class CodeConfirmation extends StatefulWidget {
   TextStyle keyboardButtonTextStyle;
   Color keyboardButtonBorderColor;
   Color keyboardIconRemoveColor;
-  final ValueChanged<String> onComplete;
-  final ValueChanged<String> onChange;
+  final ValueChanged<String> onCompleted;
+  final ValueChanged<String> onChanged;
 
   CodeConfirmation({
     this.inputCodeTextStyle = Configuration.inputCodeTextStyle,
     this.keyboardButtonTextStyle = Configuration.keyboardButtonTextStyle,
     this.keyboardButtonBorderColor = Configuration.keyboardButtonBorderColor,
     this.keyboardIconRemoveColor = Configuration.keyboardIconRemoveColor,
-    this.onComplete,
-    this.onChange,
+    this.onCompleted,
+    this.onChanged,
   });
 }
 
@@ -53,10 +53,10 @@ class _CodeConfirmationState extends State<CodeConfirmation> {
             stream: codeConfirmationStream.stream,
             builder: (context, AsyncSnapshot<String> snapshot) {
               var inputCode = snapshot.data;
-              widget.onChange(inputCode);
+              widget.onChanged(inputCode);
 
               if (inputCode.length == 4) {
-                widget.onComplete(inputCode);
+                widget.onCompleted(inputCode);
               }
 
               return InputCode(
