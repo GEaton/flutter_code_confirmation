@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
-    String codeConfirmation;
     return Scaffold(
       appBar: AppBar(
         title: Text("Code Confirmation Test"),
@@ -30,11 +29,12 @@ class MyHomePage extends StatelessWidget {
         children: <Widget>[
           CodeConfirmation(
             onComplete: (value) {
-              codeConfirmation = value;
+              print('-------- print from onComplete HomePage => $value');
+            },
+            onChange: (value) {
+              print('-------- print from onChange HomePage => $value');
             },
           ),
-
-          Text('$codeConfirmation')
         ],
       ),
     );

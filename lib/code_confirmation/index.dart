@@ -15,6 +15,7 @@ class CodeConfirmation extends StatefulWidget {
   Color keyboardButtonBorderColor;
   Color keyboardIconRemoveColor;
   final ValueChanged<String> onComplete;
+  final ValueChanged<String> onChange;
 
   CodeConfirmation({
     this.inputCodeTextStyle = Configuration.inputCodeTextStyle,
@@ -22,6 +23,7 @@ class CodeConfirmation extends StatefulWidget {
     this.keyboardButtonBorderColor = Configuration.keyboardButtonBorderColor,
     this.keyboardIconRemoveColor = Configuration.keyboardIconRemoveColor,
     this.onComplete,
+    this.onChange,
   });
 }
 
@@ -51,6 +53,7 @@ class _CodeConfirmationState extends State<CodeConfirmation> {
             stream: codeConfirmationStream.stream,
             builder: (context, AsyncSnapshot<String> snapshot) {
               var inputCode = snapshot.data;
+              widget.onChange(inputCode);
 
               if (inputCode.length == 4) {
                 widget.onComplete(inputCode);
