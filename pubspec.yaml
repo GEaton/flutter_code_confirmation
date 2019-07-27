@@ -1,8 +1,9 @@
 name: code_confirmation
 description: Code confirmation with numeric keyboard
+repository : https://github.com/GEaton/flutter_code_confirmation
 author: EATON Geremy <geremy.eaton+flutter@gmail.com>
 homepage : https://github.com/GEaton
-version: 1.0.0
+version: 1.0.1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
