@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add configurable more style
 - Add configurable validate button
 
+## [1.0.3] - 2019-08-07
+### Fixed
+- Fix warning on FlatButton
+- Fix onComplete event on initialisation
+
+## [1.0.2] - 2019-07-29
+### Fixed
+- Fix initialisation when we use widget in complex tree
+- Fix some recommendation from Flutter lint
+
 ## [1.0.1] - 2019-07-27
 ### Added
 - Add CHANGELOG.md
