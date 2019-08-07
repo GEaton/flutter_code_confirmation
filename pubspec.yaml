@@ -1,9 +1,9 @@
 name: code_confirmation
-description: Code confirmation with numeric keyboard
+description: A widget with numerical keyboard and 4 inputs, usefull for hight secured confirmation with 2 step
 repository : https://github.com/GEaton/flutter_code_confirmation
 author: EATON Geremy <geremy.eaton+flutter@gmail.com>
 homepage : https://github.com/GEaton
-version: 1.0.1
+version: 1.0.3
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

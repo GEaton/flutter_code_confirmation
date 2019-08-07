@@ -10,10 +10,10 @@ class CodeConfirmation extends StatefulWidget {
   @override
   _CodeConfirmationState createState() => _CodeConfirmationState();
 
-  TextStyle inputCodeTextStyle;
-  TextStyle keyboardButtonTextStyle;
-  Color keyboardButtonBorderColor;
-  Color keyboardIconRemoveColor;
+  final TextStyle inputCodeTextStyle;
+  final TextStyle keyboardButtonTextStyle;
+  final Color keyboardButtonBorderColor;
+  final Color keyboardIconRemoveColor;
   final ValueChanged<String> onCompleted;
   final ValueChanged<String> onChanged;
 
@@ -53,9 +53,12 @@ class _CodeConfirmationState extends State<CodeConfirmation> {
             stream: codeConfirmationStream.stream,
             builder: (context, AsyncSnapshot<String> snapshot) {
               var inputCode = snapshot.data;
-              widget.onChanged(inputCode);
 
-              if (inputCode.length == 4) {
+              if (widget.onChanged != null) {
+                widget.onChanged(inputCode);
+              }
+
+              if (widget.onCompleted != null && inputCode.length == 4 && inputCode != '____') {
                 widget.onCompleted(inputCode);
               }
 

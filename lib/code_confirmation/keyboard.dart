@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Keyboard extends StatelessWidget {
-  Color keyboardButtonBorderColor;
-  Color keyboardIconRemoveColor;
-  TextStyle keyboardButtonTextStyle;
-  StreamSink<String> streamSink;
-  VoidCallback onComplete;
+  final Color keyboardButtonBorderColor;
+  final Color keyboardIconRemoveColor;
+  final TextStyle keyboardButtonTextStyle;
+  final StreamSink<String> streamSink;
 
   Keyboard({
     this.keyboardButtonBorderColor,
@@ -44,7 +43,14 @@ class Keyboard extends StatelessWidget {
         rowKeyboard(keyNumbers: <dynamic>['1', '2', '3']),
         rowKeyboard(keyNumbers: <dynamic>['4', '5', '6']),
         rowKeyboard(keyNumbers: <dynamic>['7', '8', '9']),
-        rowKeyboard(keyNumbers: <dynamic>[FlatButton(), '0', removeButton()]),
+        rowKeyboard(keyNumbers: <dynamic>[
+          FlatButton(
+            onPressed: null,
+            child: Container(),
+          ),
+          '0',
+          removeButton()
+        ]),
       ],
     );
   }
